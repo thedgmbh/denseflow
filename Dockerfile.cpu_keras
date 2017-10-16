@@ -1,0 +1,10 @@
+FROM       teamsoo/denseflow:cpu
+MAINTAINER Phakin Cheangkrachange "https://github.com/teamsoo"
+
+ARG KERAS_VERSION=2.0.8
+
+# Install Keras
+RUN pip3 --no-cache-dir install git+git://github.com/fchollet/keras.git@${KERAS_VERSION}
+
+WORKDIR "/root"
+CMD ["/bin/bash"]
