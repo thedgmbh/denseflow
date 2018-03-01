@@ -55,11 +55,7 @@ RUN apt-get update && apt-get install -y \
 		libxine2-dev \
 		libtbb-dev \
 		libeigen3-dev \
-		liblapacke-dev \
-		&& \
-	apt-get clean && \
-	apt-get autoremove && \
-	rm -rf /var/lib/apt/lists/*
+		liblapacke-dev
 
 # Installl OpenCv3
 RUN git clone https://github.com/opencv/opencv.git /root/opencv && \
@@ -75,7 +71,7 @@ RUN git clone https://github.com/opencv/opencv.git /root/opencv && \
 
 # Installl darkflow
 RUN pip3 install cython
-RUN git clone https://github.com/teamsoo/darkflow.git /root/darkflow && \
+RUN git clone https://github.com/thtrieu/darkflow.git /root/darkflow && \
 	cd /root/darkflow && \
     pip3 install .
 
